@@ -3,6 +3,7 @@
   :margin-right 4%
   :min-width= !vgrid_width
   :width 92%
+  :*width= "expression(document.body.clientWidth < 92% ? '#{!vgrid_width}' : 'auto')"
  
 =grid_width(!n, !cols = !vgrid_columns)
   :width= (100% / !cols) * !n - 2%
