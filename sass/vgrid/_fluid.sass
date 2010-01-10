@@ -18,26 +18,6 @@
   +grid_unit_base
   +grid_width(!n, !cols)
  
-=grid(!n, !cols = !vgrid_columns)
-  :display inline
-  :float left
-  :position relative
-  :margin
-    :left= 1%
-    :right= 1%
- 
-=alpha
-  :margin-left 0
- 
-=omega
-  :margin-right 0
-
-=grid_children
-  .alpha
-    +alpha
-  .omega
-    +omega
- 
 =grids(!cols = !vgrid_columns)
   #{enumerate(".grid", 1, !cols, "_")}
     +grid_unit_base
@@ -77,4 +57,4 @@
     .container_#{!cols} .pull_#{!n}
       +grid_pull(!n, !cols)
  
-@include shared/grid_system.sass
+@import vgrid/shared/grid_system.sass

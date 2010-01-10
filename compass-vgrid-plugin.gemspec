@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
      "sass/vgrid/_elastic.sass",
      "sass/vgrid/_fixed.sass",
      "sass/vgrid/_fluid.sass",
+     "sass/vgrid/shared/_grid_system.sass",
      "templates/elastic/project/grid.sass",
      "templates/elastic/project/manifest.rb",
      "templates/fixed/project/grid.sass",

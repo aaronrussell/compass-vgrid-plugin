@@ -4,13 +4,25 @@
 !vgrid_grid_width ||= 960px
 !vgrid_columns ||= 12
 
+=alpha
+  :margin-left 0
+ 
+=omega
+  :margin-right 0
+
+=grid_children
+  .alpha
+    +alpha
+  .omega
+    +omega
+
 =grid_system(!cols = !vgrid_columns)
   /*
     Containers
   .container_#{!cols}
     +grid_container
   /*
-    Grid
+    Grid >> #{!cols} Columns
   +grids(!cols)
   /*
     Grid >> Children (Alpha ~ First, Omega ~ Last)
