@@ -1,12 +1,12 @@
 =grid_container
   :margin-left auto
   :margin-right auto
-  :width= !vgrid_grid_width
+  :width= !vgrid_width
  
-=grid_width(!n, !cols = !vgrid_columns, !gutter_width = !vgrid_gutter_width)
-  :width= (!vgrid_grid_width / !cols) * !n - !gutter_width
+=grid_width(!n, !cols = !vgrid_columns, !gutter_width = !vgrid_gutter)
+  :width= (!vgrid_width / !cols) * !n - !gutter_width
  
-=grid_unit_base(!gutter_width = !vgrid_gutter_width)
+=grid_unit_base(!gutter_width = !vgrid_gutter)
   :display inline
   :float left
   :position relative
@@ -14,11 +14,11 @@
     :left= !gutter_width / 2
     :right= !gutter_width / 2
  
-=grid(!n, !cols = !vgrid_columns, !gutter_width = !vgrid_gutter_width)
+=grid(!n, !cols = !vgrid_columns, !gutter_width = !vgrid_gutter)
   +grid_unit_base(!gutter_width)
   +grid_width(!n, !cols, !gutter_width)
  
-=grids(!cols = !vgrid_columns, !gutter_width = !vgrid_gutter_width)
+=grids(!cols = !vgrid_columns, !gutter_width = !vgrid_gutter)
   #{enumerate(".grid", 1, !cols, "_")}
     +grid_unit_base
   @for !n from 1 through !cols
@@ -26,7 +26,7 @@
       +grid_width(!n, !cols, !gutter_width)
  
 =grid_prefix(!n, !cols = !vgrid_columns)
-  :padding-left= (!vgrid_grid_width / !cols) * !n
+  :padding-left= (!vgrid_width / !cols) * !n
  
 =grid_prefixes(!cols = !vgrid_columns)
   @for !n from 1 through !cols - 1
@@ -34,7 +34,7 @@
       +grid_prefix(!n, !cols)
  
 =grid_suffix(!n, !cols = !vgrid_columns)
-  :padding-right= (!vgrid_grid_width / !cols) * !n
+  :padding-right= (!vgrid_width / !cols) * !n
  
 =grid_suffixes(!cols = !vgrid_columns)
   @for !n from 1 through !cols - 1
@@ -42,7 +42,7 @@
       +grid_suffix(!n, !cols)
 
 =grid_push(!n, !cols = !vgrid_columns)
-  :left= (!vgrid_grid_width / !cols) * !n
+  :left= (!vgrid_width / !cols) * !n
 
 =grid_pushes(!cols = !vgrid_columns)
   @for !n from 1 through !cols - 1
@@ -50,7 +50,7 @@
       +grid_push(!n, !cols)
 
 =grid_pull(!n, !cols = !vgrid_columns)
-  :right= (!vgrid_grid_width / !cols) * !n * -1
+  :right= (!vgrid_width / !cols) * !n * -1
 
 =grid_pulls(!cols = !vgrid_columns)
   @for !n from 1 through !cols - 1
