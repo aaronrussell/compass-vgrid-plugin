@@ -5,16 +5,19 @@
   Licensed under GPL and MIT.
   Converted to Compass compatible plugin by Aaron Russell - http://www.aaronrussell.co.uk
  
-@import fluid960/grid.sass
+@import vgrid/fluid.sass
 @import compass/utilities/general/clearfix.sass
  
 // The following generates the default grids provided by the css version of 960.gs
 .container_12
   +grid-system(12)
+
+.container_16
+  +grid-system(16)
   
 // But most compass users prefer to construct semantic layouts like so (two column layout with header and footer):
  
-!fluid_columns = 24
+!vgrid_columns = 24
 .two-column
   +grid-container
   #header, #footer, #sidebar, #main-content

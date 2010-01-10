@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.md",
      "Rakefile",
      "VERSION",
+     "compass-vgrid-plugin.gemspec",
      "lib/vgrid.rb",
      "lib/vgrid/compass_plugin.rb",
      "sass/vgrid/_elastic.sass",
