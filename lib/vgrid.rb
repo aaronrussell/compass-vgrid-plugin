@@ -1,1 +1,1 @@
-Require File.join(File.dirname(__FILE__), 'vgrid', 'compass_plugin')
+require File.join(File.dirname(__FILE__), 'vgrid', 'compass_plugin')
