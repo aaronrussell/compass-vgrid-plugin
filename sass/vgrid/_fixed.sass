@@ -1,7 +1,3 @@
-!vgrid_gutter_width ||= 20px
-!vgrid_grid_width ||= 960px
-!vgrid_columns ||= 12
- 
 =grid_container
   :margin-left auto
   :margin-right auto
@@ -35,10 +31,10 @@
     +omega
  
 =grids(!cols = !vgrid_columns, !gutter_width = !vgrid_gutter_width)
-  #{enumerate(".grid",1,!cols,"_")}
+  #{enumerate(".grid", 1, !cols, "_")}
     +grid_unit_base
   @for !n from 1 through !cols
-    .grid_#{!n}
+    .container_#{!cols} .grid_#{!n}
       +grid_width(!n, !cols, !gutter_width)
  
 =grid_prefix(!n, !cols = !vgrid_columns)
@@ -46,7 +42,7 @@
  
 =grid_prefixes(!cols = !vgrid_columns)
   @for !n from 1 through !cols - 1
-    .prefix_#{!n}
+    .container_#{!cols} .prefix_#{!n}
       +grid_prefix(!n, !cols)
  
 =grid_suffix(!n, !cols = !vgrid_columns)
@@ -54,7 +50,7 @@
  
 =grid_suffixes(!cols = !vgrid_columns)
   @for !n from 1 through !cols - 1
-    .suffix_#{!n}
+    .container_#{!cols} .suffix_#{!n}
       +grid_suffix(!n, !cols)
 
 =grid_push(!n, !cols = !vgrid_columns)
@@ -62,7 +58,7 @@
 
 =grid_pushes(!cols = !vgrid_columns)
   @for !n from 1 through !cols - 1
-    .push_#{!n}
+    .container_#{!cols} .push_#{!n}
       +grid_push(!n, !cols)
 
 =grid_pull(!n, !cols = !vgrid_columns)
@@ -70,15 +66,7 @@
 
 =grid_pulls(!cols = !vgrid_columns)
   @for !n from 1 through !cols - 1
-    .pull_#{!n}
+    .container_#{!cols} .pull_#{!n}
       +grid_pull(!n, !cols)
- 
-=grid_system(!cols = !vgrid_columns)
-  .container_#{!cols}
-    +grid_container
-  +grids(!cols)
-  +grid_children
-  +grid_prefixes(!cols)
-  +grid_suffixes(!cols)
-  +grid_pushes(!cols)
-  +grid_pulls(!cols)
+
+@include shared/grid_system.sass

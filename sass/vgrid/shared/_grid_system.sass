@@ -1,0 +1,33 @@
+@import compass/utilities/general/clearfix.sass
+
+!vgrid_gutter_width ||= 20px
+!vgrid_grid_width ||= 960px
+!vgrid_columns ||= 12
+
+=grid_system(!cols = !vgrid_columns)
+  /*
+    Containers
+  .container_#{!cols}
+    +grid_container
+  /*
+    Grid
+  +grids(!cols)
+  /*
+    Grid >> Children (Alpha ~ First, Omega ~ Last)
+  +grid_children
+  /*
+    Prefix Extra Space
+  +grid_prefixes(!cols)
+  /*
+    Suffix Extra Space
+  +grid_suffixes(!cols)
+  /*
+    Push Space
+  +grid_pushes(!cols)
+  /*
+    Pull Space
+  +grid_pulls(!cols)
+  /*
+    Clear Floated Elements
+  .clearfix
+    +clearfix

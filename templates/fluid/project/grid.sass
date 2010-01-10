@@ -6,12 +6,9 @@
   Converted to Compass compatible plugin by Aaron Russell - http://www.aaronrussell.co.uk
  
 @import vgrid/fluid.sass
-@import compass/utilities/general/clearfix.sass
  
-// The following generates the default grids provided by the css version of 960.gs
+// The following generates the default grids provided by the css version of Variable Grid System
 +grid_system(12)
-
-+grid_system(16)
   
 // But most compass users prefer to construct semantic layouts like so (two column layout with header and footer):
  
@@ -27,6 +24,4 @@
   #main-content
     +grid_width(16)
  
-// When in doubt, try a clearfix
-.clearfix
-  +clearfix
+// When in doubt, try a +clearfix mixin ;)
