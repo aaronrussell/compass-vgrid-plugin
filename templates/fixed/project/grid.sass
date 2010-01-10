@@ -9,25 +9,23 @@
 @import compass/utilities/general/clearfix.sass
  
 // The following generates the default grids provided by the css version of 960.gs
-.container_12
-  +grid-system(12)
++grid_system(12)
  
-.container_16
-  +grid-system(16)
++grid_system(16)
  
 // But most compass users prefer to construct semantic layouts like so (two column layout with header and footer):
  
 !vgrid_columns = 24
 .two-column
-  +grid-container
+  +grid_container
   #header, #footer, #sidebar, #main-content
-    +grid-unit-base
+    +grid_unit_base
   #header, #footer
-    +grid-width(24)
+    +grid_width(24)
   #sidebar
-    +grid-width(8)
+    +grid_width(8)
   #main-content
-    +grid-width(16)
+    +grid_width(16)
 
 // When in doubt, try a clearfix
 .clearfix
