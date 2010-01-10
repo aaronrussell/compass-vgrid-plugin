@@ -11,17 +11,15 @@
 +grid_system(12)
  
 // But most compass users prefer to construct semantic layouts like so (two column layout with header and footer):
- 
-!vgrid_columns = 24
-.two-column
+!vgrid_columns = 16
+#wrap
   +grid_container
-  #header, #footer, #sidebar, #main-content
-    +grid_unit_base
   #header, #footer
-    +grid_width(24)
-  #sidebar
-    +grid_width(8)
+    +grid(16)
+  #left-nav
+    +grid(5)
   #main-content
-    +grid_width(16)
+    +grid_prefix(1)
+    +grid(10)
 
 // When in doubt, try a +clearfix mixin ;)

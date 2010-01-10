@@ -65,11 +65,13 @@ For example:
     !vgrid_columns = 16
     
     #wrap
-      +grid-container
+      +grid_container
+      #header, #footer
+        +grid(16)
       #left-nav
         +grid(5)
       #main-content
-        +grid-prefix(1)
+        +grid_prefix(1)
         +grid(10)
 
 ## Copyright
