@@ -5,13 +5,12 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "compass-vgrid-plugin"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Compass compatible SASS port of the Variable Grid System. Based on the 960 Grid System.}
+    gem.description = %Q{A Compass compatible SASS port of the Variable Grid System by Spry Soft (http://www.spry-soft.com/grids/). Based in the 960 Grid System (http://960.gs/). Provides fixed, fluid and elastic grids with complete control over the grid system.}
     gem.email = "aaron@gc4.co.uk"
     gem.homepage = "http://github.com/aaronrussell/compass-vgrid-plugin"
     gem.authors = ["Aaron Russell"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.add_dependency "compass", ">= 0"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
