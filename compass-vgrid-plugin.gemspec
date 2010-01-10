@@ -30,10 +30,13 @@ Gem::Specification.new do |s|
      "sass/vgrid/_fixed.sass",
      "sass/vgrid/_fluid.sass",
      "sass/vgrid/shared/_grid_system.sass",
+     "templates/elastic/project/demo.html",
      "templates/elastic/project/grid.sass",
      "templates/elastic/project/manifest.rb",
+     "templates/fixed/project/demo.html",
      "templates/fixed/project/grid.sass",
      "templates/fixed/project/manifest.rb",
+     "templates/fluid/project/demo.html",
      "templates/fluid/project/grid.sass",
      "templates/fluid/project/manifest.rb"
   ]
