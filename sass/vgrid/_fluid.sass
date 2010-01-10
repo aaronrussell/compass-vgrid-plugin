@@ -1,14 +1,14 @@
 !vgrid_columns ||= 12
  
-=grid-container
+=grid_container
   :margin-left 4%
   :margin-right 4%
   :width= 92%
  
-=grid-width(!n, !cols = !vgrid_columns)
+=grid_width(!n, !cols = !vgrid_columns)
   :width= (100% / !cols) * !n - 2%
  
-=grid-unit-base
+=grid_unit_base
   :display inline
   :float left
   :position relative
@@ -17,8 +17,8 @@
     :right= 1%
  
 =grid(!n, !cols = !vgrid_columns)
-  +grid-unit-base
-  +grid-width(!n, !cols)
+  +grid_unit_base
+  +grid_width(!n, !cols)
  
 =grid(!n, !cols = !vgrid_columns)
   :display inline
@@ -33,39 +33,62 @@
  
 =omega
   :margin-right 0
+
+=grid_children
+  .alpha
+    +alpha
+  .omega
+    +omega
  
 =grids(!cols = !vgrid_columns)
   #{enumerate(".grid",1,!cols,"_")}
-    +grid-unit-base
+    +grid_unit_base
   @for !n from 1 through !cols
     .grid_#{!n}
-      +grid-width(!n, !cols)
+      +grid_width(!n, !cols)
  
-=grid-prefix(!n, !cols = !vgrid_columns)
+=grid_prefix(!n, !cols = !vgrid_columns)
   :padding-left= (100% / !cols) * !n
  
-=grid-prefixes(!cols = !vgrid_columns)
+=grid_prefixes(!cols = !vgrid_columns)
   @for !n from 1 through !cols - 1
     .prefix_#{!n}
-      +grid-prefix(!n, !cols)
+      +grid_prefix(!n, !cols)
  
-=grid-suffix(!n, !cols = !vgrid_columns)
+=grid_suffix(!n, !cols = !vgrid_columns)
   :padding-right= (100% / !cols) * !n
  
-=grid-suffixes(!cols = !vgrid_columns)
+=grid_suffixes(!cols = !vgrid_columns)
   @for !n from 1 through !cols - 1
     .suffix_#{!n}
-      +grid-suffix(!n, !cols)
+      +grid_suffix(!n, !cols)
+
+=grid_push(!n, !cols = !vgrid_columns)
+  :left= (100% / !cols) * !n
+
+=grid_pushes(!cols = !vgrid_columns)
+  @for !n from 1 through !cols - 1
+    .prefix_#{!n}
+      +grid_push(!n, !cols)
+
+=grid_pull(!n, !cols = !vgrid_columns)
+  :right= (100% / !cols) * !n * -1
+
+=grid_pulls(!cols = !vgrid_columns)
+  @for !n from 1 through !cols - 1
+    .prefix_#{!n}
+      +grid_pull(!n, !cols)
  
-=grid-children
+=grid_children
   .alpha
     +alpha
   .omega
     +omega
  
 =grid-system(!cols = !vgrid_columns)
-  +grid-container
+  .container_#{!cols}
+    +grid_container
   +grids(!cols)
-  +grid-children
-  +grid-prefixes(!cols)
-  +grid-suffixes(!cols)
+  +grid_children
+  +grid_prefixes(!cols)
+  +grid_suffixes(!cols)
