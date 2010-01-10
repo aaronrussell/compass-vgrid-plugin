@@ -62,7 +62,7 @@
 
 =grid_pushes(!cols = !vgrid_columns)
   @for !n from 1 through !cols - 1
-    .prefix_#{!n}
+    .push_#{!n}
       +grid_push(!n, !cols)
 
 =grid_pull(!n, !cols = !vgrid_columns)
@@ -70,7 +70,7 @@
 
 =grid_pulls(!cols = !vgrid_columns)
   @for !n from 1 through !cols - 1
-    .prefix_#{!n}
+    .pull_#{!n}
       +grid_pull(!n, !cols)
  
 =grid_system(!cols = !vgrid_columns)
