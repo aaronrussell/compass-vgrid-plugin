@@ -22,7 +22,7 @@ vGrid provides three seperate framework options:
 
 * `fixed` - Fixed width grid
 * `fluid` - Fluid width grid
-* `elastic` - Elastic width grid (framework still in development)
+* `elastic` - Elastic width grid
 
 ## Using vGrid with an existing project
 
@@ -47,7 +47,7 @@ Typically, you will want to customize your grid system. vGrid provides a number 
 
 * `!vgrid_width` - The width of the grid system. Defaults to `960px`. Not used with `fluid` framework.
 * `!vgrid_columns` - The number of columns in the grid system. Defaults to `12`.
-* `!vgrid_gutter` - The width of each column gutter. Defaults to `20px`. Not used with `fluid` framework.
+* `!vgrid_gutter` - The width of each column gutter. Defaults to `20px`. Only used with `fixed` framework.
 
 ## Making semantic grids
 
