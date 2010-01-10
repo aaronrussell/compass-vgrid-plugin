@@ -1,0 +1,71 @@
+!vgrid_columns ||= 12
+ 
+=grid-container
+  :margin-left 4%
+  :margin-right 4%
+  :width= 92%
+ 
+=grid-width(!n, !cols = !vgrid_columns)
+  :width= (100% / !cols) * !n - 2%
+ 
+=grid-unit-base
+  :display inline
+  :float left
+  :position relative
+  :margin
+    :left= 1%
+    :right= 1%
+ 
+=grid(!n, !cols = !vgrid_columns)
+  +grid-unit-base
+  +grid-width(!n, !cols)
+ 
+=grid(!n, !cols = !vgrid_columns)
+  :display inline
+  :float left
+  :position relative
+  :margin
+    :left= 1%
+    :right= 1%
+ 
+=alpha
+  :margin-left 0
+ 
+=omega
+  :margin-right 0
+ 
+=grids(!cols = !vgrid_columns)
+  #{enumerate(".grid",1,!cols,"_")}
+    +grid-unit-base
+  @for !n from 1 through !cols
+    .grid_#{!n}
+      +grid-width(!n, !cols)
+ 
+=grid-prefix(!n, !cols = !vgrid_columns)
+  :padding-left= (100% / !cols) * !n
+ 
+=grid-prefixes(!cols = !vgrid_columns)
+  @for !n from 1 through !cols - 1
+    .prefix_#{!n}
+      +grid-prefix(!n, !cols)
+ 
+=grid-suffix(!n, !cols = !vgrid_columns)
+  :padding-right= (100% / !cols) * !n
+ 
+=grid-suffixes(!cols = !vgrid_columns)
+  @for !n from 1 through !cols - 1
+    .suffix_#{!n}
+      +grid-suffix(!n, !cols)
+ 
+=grid-children
+  .alpha
+    +alpha
+  .omega
+    +omega
+ 
+=grid-system(!cols = !vgrid_columns)
+  +grid-container
+  +grids(!cols)
+  +grid-children
+  +grid-prefixes(!cols)
+  +grid-suffixes(!cols)
