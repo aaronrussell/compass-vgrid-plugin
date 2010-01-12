@@ -10,36 +10,38 @@
 =omega
   :margin-right 0
 
-=grid_children
+=grid-children
   .alpha
     +alpha
   .omega
     +omega
 
-=grid_system(!cols = !vgrid_columns)
+=grid-system(!cols = !vgrid_columns)
   /*
     Containers
   .container_#{!cols}
-    +grid_container
+    +grid-container
   /*
     Grid
   +grids(!cols)
   /*
     Grid >> Children (Alpha ~ First, Omega ~ Last)
-  +grid_children
+  +grid-children
   /*
     Prefix Extra Space
-  +grid_prefixes(!cols)
+  +grid-prefixes(!cols)
   /*
     Suffix Extra Space
-  +grid_suffixes(!cols)
+  +grid-suffixes(!cols)
   /*
     Push Space
-  +grid_pushes(!cols)
+  +grid-pushes(!cols)
   /*
     Pull Space
-  +grid_pulls(!cols)
+  +grid-pulls(!cols)
   /*
     Clear Floated Elements
   .clearfix
     +clearfix
+
+@import vgrid/shared/deprecated.sass

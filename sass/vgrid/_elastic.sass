@@ -1,13 +1,13 @@
-=grid_container
+=grid-container
   :margin-left 4%
   :margin-right 4%
   :min-width= !vgrid_width
   :width 92%
  
-=grid_width(!n, !cols = !vgrid_columns)
+=grid-width(!n, !cols = !vgrid_columns)
   :width= (100% / !cols) * !n - 2%
  
-=grid_unit_base
+=grid-unit_base
   :display inline
   :float left
   :position relative
@@ -16,46 +16,46 @@
     :right= 1%
  
 =grid(!n, !cols = !vgrid_columns)
-  +grid_unit_base
-  +grid_width(!n, !cols)
+  +grid-unit_base
+  +grid-width(!n, !cols)
  
 =grids(!cols = !vgrid_columns)
   #{enumerate(".grid", 1, !cols, "_")}
-    +grid_unit_base
+    +grid-unit_base
   @for !n from 1 through !cols
     .container_#{!cols} .grid_#{!n}
-      +grid_width(!n, !cols)
+      +grid-width(!n, !cols)
  
-=grid_prefix(!n, !cols = !vgrid_columns)
+=grid-prefix(!n, !cols = !vgrid_columns)
   :padding-left= (100% / !cols) * !n
  
-=grid_prefixes(!cols = !vgrid_columns)
+=grid-prefixes(!cols = !vgrid_columns)
   @for !n from 1 through !cols - 1
     .container_#{!cols} .prefix_#{!n}
-      +grid_prefix(!n, !cols)
+      +grid-prefix(!n, !cols)
  
-=grid_suffix(!n, !cols = !vgrid_columns)
+=grid-suffix(!n, !cols = !vgrid_columns)
   :padding-right= (100% / !cols) * !n
  
-=grid_suffixes(!cols = !vgrid_columns)
+=grid-suffixes(!cols = !vgrid_columns)
   @for !n from 1 through !cols - 1
     .container_#{!cols} .suffix_#{!n}
-      +grid_suffix(!n, !cols)
+      +grid-suffix(!n, !cols)
 
-=grid_push(!n, !cols = !vgrid_columns)
+=grid-push(!n, !cols = !vgrid_columns)
   :left= (100% / !cols) * !n
 
-=grid_pushes(!cols = !vgrid_columns)
+=grid-pushes(!cols = !vgrid_columns)
   @for !n from 1 through !cols - 1
     .container_#{!cols} .push_#{!n}
-      +grid_push(!n, !cols)
+      +grid-push(!n, !cols)
 
-=grid_pull(!n, !cols = !vgrid_columns)
+=grid-pull(!n, !cols = !vgrid_columns)
   :right= (100% / !cols) * !n * -1
 
-=grid_pulls(!cols = !vgrid_columns)
+=grid-pulls(!cols = !vgrid_columns)
   @for !n from 1 through !cols - 1
     .container_#{!cols} .pull_#{!n}
-      +grid_pull(!n, !cols)
+      +grid-pull(!n, !cols)
  
 @import vgrid/shared/grid_system.sass
