@@ -8,18 +8,18 @@
 @import vgrid/fixed.sass
  
 // The following generates the default grids provided by the css version of Variable Grid System
-+grid_system(12)
++grid-system(12)
  
 // But most compass users prefer to construct semantic layouts like so (two column layout with header and footer):
 !vgrid_columns = 16
 #wrap
-  +grid_container
+  +grid-container
   #header, #footer
     +grid(16)
   #left-nav
     +grid(5)
   #main-content
-    +grid_prefix(1)
+    +grid-prefix(1)
     +grid(10)
 
 // When in doubt, try a +clearfix mixin ;)
