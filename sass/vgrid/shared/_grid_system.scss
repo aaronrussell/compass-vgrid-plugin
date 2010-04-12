@@ -1,0 +1,30 @@
+@import "ompass/utilities/general/clearfix";
+
+$vgrid_width: 960px !default;
+$vgrid_columns: 12 !default;
+$vgrid_gutter: 20px !default;
+
+@mixin alpha {margin-left: 0;}
+@mixin omega {margin-right: 0;}
+
+@mixin grid_children {
+  .alpha {@include alpha;}
+  .omega {@include omega;}
+}
+
+@grid_system($cols: $vgrid_columns) {
+  .container_#{$cols} {@include grid_container;}
+  @include grids($cols);
+  @include grid_children;
+  @include grid_prefixes($cols);
+  @include grid_suffixes($cols);
+  @include grid_pushes($cols);
+  @include grid_pulls($cols);
+  .clearfix {@include clearfix;}
+}
+
+
+
+
+
+

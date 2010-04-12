@@ -1,2 +1,2 @@
-stylesheet "grid.sass", :media => "screen, projection"
+stylesheet "grid.scss", :media => "screen, projection"
 file "demo.html"

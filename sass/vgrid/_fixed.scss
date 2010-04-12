@@ -1,0 +1,64 @@
+@mixin grid_container {
+  margin-left: auto; margin-right: auto; width: $vgrid_width;
+}
+
+@mixin grid_width($n, $cols: $vgrid_columns, $gutter_width: $vgrid_gutter) {
+  width: ($vgrid_width / $cols) * $n - $gutter_width;
+}
+
+@mixin grid_unit_base($gutter_width: $vgrid_gutter) {
+  display: inline; float: left; position: relative; margin-left: $gutter_width / 2; margin-right: $gutter_width / 2;
+}
+
+@mixin grid($n, $cols: $vgrid_columns, $gutter_width: $vgrid_gutter) {
+  @include grid_unit_base($getter_width); @include grid_width($n, $cols, $gutter_width);
+}
+
+@mixin grids($cols: $vgrid_columns, $gutter_width: $vgrid_gutter) {
+  #{enumerate(".grid", 1, !cols, "_")} {@include grid_unit_base}
+  @for $n from 1 through $cols {
+    .container_#{$cols} .grid_#{$n} {@include grid_width($n, $cols, $gutter_width);}
+  }
+}
+
+@mixin grid_prefix($n, $cols: $vgrid_columns) {
+  padding-left: ($vgrid_width / $cols) * $n;
+}
+
+@mixin grid_prefixes($cols: $vgrid_columns) {
+  @for $n from 1 through $cols - 1 {
+    .container_#{$cols} .prefix_#{$n} {@include grid_prefix($n, $cols);}
+  }
+}
+
+@mixin grid_suffix($n, $cols: $vgrid_columns) {
+  padding-right: ($vgrid_width / $cols) * $n;
+}
+
+@mixin grid_suffixes($cols: $vgrid_columns) {
+  @for $n from 1 through $cols - 1 {
+    .container_#{$cols} .suffix_#{$n} {@include grid_suffix($n, $cols);}
+  }
+}
+
+@mixin grid_push($n, $cols: $vgrid_columns) {
+  left: ($vgrid_width / $cols) * $n;
+}
+
+@mixin grid_pushes($cols: $vgrid_columns) {
+  @for $n from 1 through $cols - 1 {
+    .container_#{$cols} .push_#{$n} {@include grid_push($n, $cols);}
+  }
+}
+
+@mixin grid_pull($n, $cols: $vgrid_columns) {
+  right: ($vgrid_width / $cols) * $n;
+}
+
+@mixin grid_pulls($cols: $vgrid_columns) {
+  @for $n from 1 through $cols - 1 {
+    .container_#{$cols} .pull_#{$n} {@include grid_pull($n, $cols);}
+  }
+}
+
+@import "vgrid/shared/grid_system";
