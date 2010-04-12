@@ -1,4 +1,4 @@
-@import "ompass/utilities/general/clearfix";
+@import "compass/utilities/general/clearfix";
 
 $vgrid_width: 960px !default;
 $vgrid_columns: 12 !default;
@@ -12,7 +12,7 @@ $vgrid_gutter: 20px !default;
   .omega {@include omega;}
 }
 
-@grid_system($cols: $vgrid_columns) {
+@mixin grid_system($cols: $vgrid_columns) {
   .container_#{$cols} {@include grid_container;}
   @include grids($cols);
   @include grid_children;

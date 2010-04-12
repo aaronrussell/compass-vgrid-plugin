@@ -11,11 +11,11 @@
 }
 
 @mixin grid($n, $cols: $vgrid_columns, $gutter_width: $vgrid_gutter) {
-  @include grid_unit_base($getter_width); @include grid_width($n, $cols, $gutter_width);
+  @include grid_unit_base($gutter_width); @include grid_width($n, $cols, $gutter_width);
 }
 
 @mixin grids($cols: $vgrid_columns, $gutter_width: $vgrid_gutter) {
-  #{enumerate(".grid", 1, !cols, "_")} {@include grid_unit_base}
+  #{enumerate(".grid", 1, $cols, "_")} {@include grid_unit_base}
   @for $n from 1 through $cols {
     .container_#{$cols} .grid_#{$n} {@include grid_width($n, $cols, $gutter_width);}
   }

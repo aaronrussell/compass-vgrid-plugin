@@ -10,7 +10,7 @@ begin
     gem.email = "aaron@gc4.co.uk"
     gem.homepage = "http://github.com/aaronrussell/compass-vgrid-plugin"
     gem.authors = ["Aaron Russell"]
-    gem.add_dependency "compass", ">= 0"
+    gem.add_dependency "compass", ">= 0.10.0.rc2"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
