@@ -7,11 +7,16 @@
 */
  
 @import "vgrid/fixed";
+@import "compass/css3";
+
+// The following includes a bullet-proof CSS reset
+@import "compass/reset";
 
 // The following generates the default grids provided by the css version of Variable Grid System
 @include grid_system(12);
  
-// But most compass users prefer to construct semantic layouts like so (two column layout with header and footer):
+// But most compass users prefer to construct semantic layouts like this:
+// (two column layout with header and footer)
 $vgrid_columns: 16;
 #wrap {  
   @include grid_container;
@@ -26,30 +31,4 @@ $vgrid_columns: 16;
     @include grid(10);
   }
 }
-
-// When in doubt, try an @include clearfix mixin ;)
-
-body {
-  background: #eee;
-  font: 11px Arial;
-}
-.container_12 {
-  background: #fff;
-  overflow: auto;
-}
-.grid_12 {
-  background: #666;
-  margin-bottom: 6px;
-  h1 {
-    color: #fff;
-    padding: 10px;
-  }
-}
-.grid_1, .grid_2, .grid_3, .grid_4, .grid_6 {
-  background: #ddd;
-  margin-bottom: 6px;
-  p {
-    color: #333;
-    padding: 10px;
-  }
-}
+// When in doubt, try a clearfix ;) @include clearfix;

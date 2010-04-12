@@ -21,43 +21,43 @@
   }
 }
 
-@mixin grid_prefix($n, $cols: $vgrid_columns) {
+@mixin prefix($n, $cols: $vgrid_columns) {
   padding-left: ($vgrid_width / $cols) * $n;
 }
 
 @mixin grid_prefixes($cols: $vgrid_columns) {
   @for $n from 1 through $cols - 1 {
-    .container_#{$cols} .prefix_#{$n} {@include grid_prefix($n, $cols);}
+    .container_#{$cols} .prefix_#{$n} {@include prefix($n, $cols);}
   }
 }
 
-@mixin grid_suffix($n, $cols: $vgrid_columns) {
+@mixin suffix($n, $cols: $vgrid_columns) {
   padding-right: ($vgrid_width / $cols) * $n;
 }
 
 @mixin grid_suffixes($cols: $vgrid_columns) {
   @for $n from 1 through $cols - 1 {
-    .container_#{$cols} .suffix_#{$n} {@include grid_suffix($n, $cols);}
+    .container_#{$cols} .suffix_#{$n} {@include suffix($n, $cols);}
   }
 }
 
-@mixin grid_push($n, $cols: $vgrid_columns) {
+@mixin push($n, $cols: $vgrid_columns) {
   left: ($vgrid_width / $cols) * $n;
 }
 
 @mixin grid_pushes($cols: $vgrid_columns) {
   @for $n from 1 through $cols - 1 {
-    .container_#{$cols} .push_#{$n} {@include grid_push($n, $cols);}
+    .container_#{$cols} .push_#{$n} {@include push($n, $cols);}
   }
 }
 
-@mixin grid_pull($n, $cols: $vgrid_columns) {
+@mixin pull($n, $cols: $vgrid_columns) {
   right: ($vgrid_width / $cols) * $n;
 }
 
 @mixin grid_pulls($cols: $vgrid_columns) {
   @for $n from 1 through $cols - 1 {
-    .container_#{$cols} .pull_#{$n} {@include grid_pull($n, $cols);}
+    .container_#{$cols} .pull_#{$n} {@include pull($n, $cols);}
   }
 }
 

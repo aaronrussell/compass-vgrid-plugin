@@ -35,7 +35,7 @@ Gem::Specification.new do |s|
      "templates/elastic/project/demo.html",
      "templates/elastic/project/grid.sass",
      "templates/elastic/project/manifest.rb",
-     "templates/fixed/project/config.rb",
+     "templates/fixed/project/config/initializers/fixed.rb",
      "templates/fixed/project/demo.html",
      "templates/fixed/project/grid.scss",
      "templates/fixed/project/manifest.rb",

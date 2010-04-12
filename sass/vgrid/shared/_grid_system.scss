@@ -13,18 +13,20 @@ $vgrid_gutter: 20px !default;
 }
 
 @mixin grid_system($cols: $vgrid_columns) {
+  /* Container */
   .container_#{$cols} {@include grid_container;}
+  /* Grid */
   @include grids($cols);
+  /* Grid >> Children (Alpha ~ First, Omega ~ Last) */
   @include grid_children;
+  /* Prefix Extra Space */
   @include grid_prefixes($cols);
+  /* Suffix Extra Space */
   @include grid_suffixes($cols);
+  /* Push Space */
   @include grid_pushes($cols);
+  /* Pull Space */
   @include grid_pulls($cols);
+  /* Clear Floated Elements */
   .clearfix {@include clearfix;}
 }
-
-
-
-
-
-
