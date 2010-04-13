@@ -7,7 +7,7 @@
 }
 
 @mixin grid($n, $cols: $vgrid_columns) {
-  @include grid_unit_base($gutter_width); @include grid_width($n, $cols);
+  @include grid_unit_base; @include grid_width($n, $cols);
 }
 
 @mixin grids($cols: $vgrid_columns) {
