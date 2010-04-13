@@ -12,6 +12,30 @@ $vgrid_gutter: 20px !default;
   .omega {@include omega;}
 }
 
+@mixin grid_prefixes($cols: $vgrid_columns) {
+  @for $n from 1 through $cols - 1 {
+    .container_#{$cols} .prefix_#{$n} {@include prefix($n, $cols);}
+  }
+}
+
+@mixin grid_suffixes($cols: $vgrid_columns) {
+  @for $n from 1 through $cols - 1 {
+    .container_#{$cols} .suffix_#{$n} {@include suffix($n, $cols);}
+  }
+}
+
+@mixin grid_pushes($cols: $vgrid_columns) {
+  @for $n from 1 through $cols - 1 {
+    .container_#{$cols} .push_#{$n} {@include push($n, $cols);}
+  }
+}
+
+@mixin grid_pulls($cols: $vgrid_columns) {
+  @for $n from 1 through $cols - 1 {
+    .container_#{$cols} .pull_#{$n} {@include pull($n, $cols);}
+  }
+}
+
 @mixin grid_system($cols: $vgrid_columns) {
   /* Container */
   .container_#{$cols} {@include grid_container;}
