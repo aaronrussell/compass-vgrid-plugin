@@ -10,15 +10,15 @@ This Compass plugin is written and maintained by [Aaron Russell](http://www.aaro
 
 Installation is simple via Ruby Gems. [Compass](http://compass-style.org/) v0.10.0 is required.
 
-    sudo gem install compass-vgrid-plugin
+    gem install compass-vgrid-plugin
 
 ## Create a vGrid-based Compass project
 
 To create a vGrid-based compass project simply:
 
-    compass -r vgrid -f <framework> <project name>
+    compass create <project name> -r vgrid --using vgrid/<type>
 
-vGrid provides three seperate framework options:
+vGrid provides three separate framework types:
 
 * `fixed` - Fixed width grid
 * `fluid` - Fluid width grid
