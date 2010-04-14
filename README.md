@@ -53,7 +53,7 @@ Typically, you will want to customize your grid system. vGrid provides a number 
 
 It's preferable not to use meaningless class names in your HTML markup. A better solution is to mix the styles from the grid system in with your semantic IDs and classes. vGrid provides a number of mixins to allow this:
 
-* `@include grid_container;` - Declares a container element.
+* `@include container;` - Declares a container element.
 * `@include grid;` - Declares a grid element.
 * `@include alpha;` & `@include omega;` - Removes the left and right margins from the grid element.
 * `@include prefix;` & `@include suffix;` - Adds columns before or after the grid element.
@@ -65,7 +65,7 @@ For example:
     $vgrid_columns: 16;
     
     #wrap {
-      @include grid_container;
+      @include container;
       #header, #footer {
         @include grid(16);
       }

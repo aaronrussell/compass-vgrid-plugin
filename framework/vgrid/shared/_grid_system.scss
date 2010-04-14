@@ -38,7 +38,7 @@ $vgrid_gutter: 20px !default;
 
 @mixin grid_system($cols: $vgrid_columns) {
   /* Container */
-  .container_#{$cols} {@include grid_container;}
+  .container_#{$cols} {@include container;}
   /* Grid */
   @include grids($cols);
   /* Grid >> Children (Alpha ~ First, Omega ~ Last) */

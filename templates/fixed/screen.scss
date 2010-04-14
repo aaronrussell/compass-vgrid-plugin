@@ -19,7 +19,7 @@
 // (two column layout with header and footer)
 $vgrid_columns: 16;
 #wrap {  
-  @include grid_container;
+  @include container;
   #header, #footer {
     @include grid(16);
   }
