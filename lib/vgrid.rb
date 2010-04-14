@@ -1,6 +1,6 @@
-plugin_root = "#{File.dirname(__FILE__)}/.."
+plugin_root = File.join(File.dirname(__FILE__), "..")
 
 Compass::Frameworks.register("vgrid",
-  :stylesheets_directory  => "#{plugin_root}/sass",
-  :templates_directory    => "#{plugin_root}/templates"
+  :stylesheets_directory  => File.join(plugin_root, "framework"),
+  :templates_directory    => File.join(plugin_root, "templates")
 )
