@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   # Gem Details
   s.name = "compass-vgrid-plugin"
-  s.version = "0.4.0"
+  s.version = "0.4.1"
 
   s.authors = ["Aaron Russell"]
   s.date = "2010-04-13"
@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   # Gem Files
   s.files = %w(LICENSE README.md)
   s.files += Dir.glob("lib/**/*.*")
-  s.files += Dir.glob("sass/**/*.*")
+  s.files += Dir.glob("framework/**/*.*")
   s.files += Dir.glob("templates/**/*.*")
 
   # Gem Bookkeeping
