@@ -26,7 +26,7 @@ vGrid provides three separate framework types:
 
 ## Using vGrid with an existing project
 
-To use vGrid with an existing project simply import the required framework to your SASS. For example:
+To use vGrid with an existing project simply import the required framework type to your SASS. For example:
 
     @import "vgrid/fixed";
 
