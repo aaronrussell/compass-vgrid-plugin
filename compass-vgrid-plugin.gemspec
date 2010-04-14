@@ -1,10 +1,10 @@
 Gem::Specification.new do |s|
   # Gem Details
   s.name = "compass-vgrid-plugin"
-  s.version = "0.4.1"
+  s.version = "0.4.2"
 
   s.authors = ["Aaron Russell"]
-  s.date = "2010-04-13"
+  s.date = "2010-04-14"
   s.summary = %q{Compass compatible SASS port of the Variable Grid System. Based on the 960 Grid System.}
   s.description = %q{A Compass compatible SASS port of the Variable Grid System by Spry Soft (http://www.spry-soft.com/grids/). Based in the 960 Grid System (http://960.gs/). Provides fixed, fluid and elastic grids with complete control over the grid system.}
   s.email = "aaron@gc4.co.uk"
